@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataPlug</title>
     <link rel="stylesheet" href={{ asset('css/style1.css') }}>
+    <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        
+
         @include('includes.nav')
 
         <main class="py-4">
@@ -29,7 +30,7 @@
 
 
 
-{{-- 
+{{--
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
