@@ -1,9 +1,9 @@
 <nav>
     <a href="{{ url('/') }}" class="a"><img src={{ asset('images/logo.png.png') }} class="logo"></a>
-    <ul>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">How it works</a></li>
-        <li><a href="#">Privacy</a></li>
+    <ul class="ul">
+        <li class="li"><a href="#" class="a">Features</a></li>
+        <li class="li"><a href="#" class="a">How it works</a></li>
+        <li class="li"><a href="#" class="a">Privacy</a></li>
     </ul>
     <div class="nav-system">
         @if (Auth::check())
@@ -26,6 +26,7 @@
                         {{ __('Logout') }}
                     </a>
 
+                    
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
@@ -38,20 +39,38 @@
             <i class="fa-solid fa-arrow-down-short-wide"></i>
             Register
         </div>
-            <a href={{ url('/login') }} class="login-btn reg-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log in</a>
-            <a href={{ url('/register') }} class="btn reg-btn">Register</a>
+        <div class="reg-btn">
+            <a href={{ url('/login') }} class="login-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log in</a>
+            <a href={{ url('/register') }} class="btn">Register</a>
+        </div>
         @endif
 
-        <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
-        </nav>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+</nav>
 
 
-        <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{-- <script>
             const burger = document.querySelector('.fa-bars');
             const nav = document.querySelector('.navbar-nav');
 
             burger.addEventListener('click', () => {
                 nav.classList.toggle('show');
             });
-        </script>
+        </script> --}}

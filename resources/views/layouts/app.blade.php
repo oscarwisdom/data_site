@@ -6,12 +6,14 @@
     <title>DataPlug</title>
     <link rel="stylesheet" href={{ asset('css/style1.css') }}>
     <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
+    <link rel="stylesheet" href={{ asset('css/style3.css') }}>
+    <link rel="stylesheet" href={{ asset('css/style4.css') }}>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="background: #fff;">
 
         @include('includes.nav')
 
@@ -19,6 +21,27 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="{{ asset('assset/js/jquery.min.js') }}"></script>
+
+    <script>
+        const regBtnHide = document.querySelector('.reg');
+        const harmBurger = document.querySelector('.fa-bars');
+
+        regBtnHide.addEventListener('click', () => regShow())
+
+        harmBurger.addEventListener('click', () => navList())
+
+        function regShow() {
+            $('.reg-btn').toggle();
+        }
+
+        function navList() {
+            $('.ul').toggle();
+        }
+
+        
+    </script>
 </body>
 </html>
 
