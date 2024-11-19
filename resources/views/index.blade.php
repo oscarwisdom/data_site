@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 
+
 @section('content')
 <div class="hero">
-        
+
     <div class="content">
         <h1 class="arc">Buy<br>Data</h1>
         <p class="arc">Dataplugone is a new social media platform that make it easy to buy data at affordable price
@@ -17,4 +18,7 @@
     <img src={{ asset('images/data.png.jpg') }} class="features-img arc">
 
 </div>
+
+@include('includes.service')
+@include('includes.footer')
 @endsection
