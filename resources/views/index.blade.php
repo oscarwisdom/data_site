@@ -20,5 +20,6 @@
 </div>
 
 @include('includes.service')
+@include('includes.swipper')
 @include('includes.footer')
 @endsection

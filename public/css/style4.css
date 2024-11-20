@@ -60,10 +60,9 @@ footer
     .arrow-svg
     {
         display: inline-block;
-        background: white;
-        padding: 20px;
+        margin-left: 40px;
     }
-    .iner-footer .footer-box .ul-list .footer-list #lsh
+    .iner-footer .footer-box .ul-list.active
     {
         display: none;
     }
