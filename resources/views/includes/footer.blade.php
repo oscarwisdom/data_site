@@ -43,14 +43,17 @@
             </ul>
         </div>
     </div>
+    @php
+        $settings = App\Models\Settings::where('id',1)->first();
+    @endphp
     <div class="data-plug-footer">
-        <a href="{{ url('/') }}" class="a"><img src={{ asset('images/logo.png.png') }} class="logo"></a>
+        <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
         <span class="limited">
             <i class="fa-regular fa-copyright"></i>
             @php
                 echo date('Y-m-d H:i:s');
             @endphp
-            DataPlug Services Limited
+            @if ($settings) {{ $settings->website_title }}@endif Services Limited
         </span>
         <div class="socia-media">
             <i class="fab fa-facebook icons" aria-hidden="true"></i>

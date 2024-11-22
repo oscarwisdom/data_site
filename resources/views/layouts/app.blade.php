@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataPlug</title>
+    @php
+        $settings = App\Models\Settings::where('id',1)->first();
+    @endphp
+    <title>@if ($settings) {{ $settings->website_title }}@endif</title>
     <link rel="stylesheet" href={{ asset('css/style1.css') }}>
     <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
     <link rel="stylesheet" href={{ asset('css/style3.css') }}>
     <link rel="stylesheet" href={{ asset('css/style4.css') }}>
+
+    
+
+    <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

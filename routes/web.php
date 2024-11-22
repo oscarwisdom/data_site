@@ -31,5 +31,6 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
-    Route::get('/settings');
+    Route::get('/settings', [AdminController::class, 'get_settings']);
+    Route::post('/settings', [AdminController::class, 'update_settings']);
 });

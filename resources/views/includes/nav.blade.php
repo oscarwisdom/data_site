@@ -1,5 +1,5 @@
 <nav>
-    <a href="{{ url('/') }}" class="a"><img src={{ asset('images/logo.png.png') }} class="logo"></a>
+    <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
     <ul class="ul">
         <li class="li"><a href="#" class="a">Features</a></li>
         <li class="li"><a href="#" class="a">How it works</a></li>
