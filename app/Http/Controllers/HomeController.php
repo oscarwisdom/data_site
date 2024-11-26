@@ -20,6 +20,7 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
+
      */
     public function index()
     {
@@ -44,5 +45,10 @@ class HomeController extends Controller
     public function settings()
     {
         return view('front.settings');
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }
