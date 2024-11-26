@@ -13,7 +13,7 @@
     <link rel="stylesheet" href={{ asset('css/style4.css') }}>
     <link rel="stylesheet" href={{ asset('css/swipper.css') }}>
 
-    
+
 
     <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
 
@@ -31,25 +31,25 @@
     </div>
 
     <script src="{{ asset('assset/js/jquery.min.js') }}"></script>
-    
+
     <script>
         // import linkWrappe from 'assset/js/footer.js';
 
         const regBtnHide = document.querySelector('.reg');
         const harmBurger = document.querySelector('.fa-bars');
-        
+
         regBtnHide.addEventListener('click', () => regShow())
-        
+
         harmBurger.addEventListener('click', () => navList())
 
         function regShow() {
             $('.reg-btn').toggle();
         }
-        
+
         function navList() {
             $('.ul').toggle();
         }
-        
+
         </script>
         <script src="{{ asset('assset/js/footer.js') }}"></script>
         <script src="{{ asset('assset/js/swipper.js') }}"></script>

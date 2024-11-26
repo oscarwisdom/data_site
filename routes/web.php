@@ -26,7 +26,8 @@ Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']);
-Route::get('/About', [App\Http\Controllers\HomeController::class, 'About']);
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
+Route::get('/how', [App\Http\Controllers\HomeController::class, 'how_it_works']);
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {

@@ -2,8 +2,12 @@
     <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
     <ul class="ul">
         <li class="li"><a href="#" class="a">Features</a></li>
-        <li class="li"><a href="#" class="a">How it works</a></li>
-        <li class="li"><a href="#" class="a">Privacy</a></li>
+        <li class="li"><a href="{{ url('/how') }}" class="a">How it works</a></li>
+        @if (Auth::check() === url('/about'))
+        <li class="li"><a href="#" class="a">Content</a></li>
+        @else
+        <li class="li"><a href="{{ url('/about') }}" class="a">About</a></li>
+        @endif
     </ul>
     <div class="nav-system">
         @if (Auth::check())
