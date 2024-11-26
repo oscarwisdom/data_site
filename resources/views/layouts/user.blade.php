@@ -25,5 +25,6 @@
     <script src="dashboard.js"></script>
     <!-- <script src="pre-loader.js"></script> -->
      <script src="profile.js"></script>
+     
 </body>
 </html>

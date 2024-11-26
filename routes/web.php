@@ -22,6 +22,8 @@ Auth::routes();
 
 // User Routess
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/payment', [App\Http\Controllers\HomeController::class, 'payment']);
+Route::get('/make_payment', [App\Http\Controllers\HomeController::class, 'make_payment']);
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);

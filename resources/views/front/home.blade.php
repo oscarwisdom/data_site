@@ -29,7 +29,7 @@
                             @csrf
                         </form>
                     </div>
-          
+
               {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
               <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
               <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label> --}}
@@ -51,13 +51,13 @@
                       <div class="we-chat">
                           <i class="fa fa-wechat nw" aria-hidden="true"></i>
                       </div>
-                      <a href="#" class="bmb">Fund Wallet</a>
+                      <a href="{{ url('payment') }}" class="bmb">Fund Wallet</a>
                       <div class="mtd">
                         <h2><i class="fas fa-naira-sign"></i> {{ Auth::user()->balance }}</h2>
                       </div>
                   </div>
               </div>
           </div>
-          
+
   </div>
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Settings;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,20 @@ class HomeController extends Controller
     public function index()
     {
         return view('front.home');
+    }
+
+    public function payment()
+    {
+        $settings = Settings::find(1);
+        return view('front.payment', [
+            'settings' => $settings
+        ]);
+    }
+
+    public function make_payment(Request $request) {
+        
+        // continue from the last class
+
     }
 
     public function services()
