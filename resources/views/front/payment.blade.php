@@ -37,7 +37,7 @@
           
           <div>
             <div class="home">
-                <i class="fas fa-home" aria-hidden="true"></i>
+                <i class="fas fa-money-bill-1" aria-hidden="true"></i>
                 <p>Payment</p>
             </div>
             <form id="makePaymentForm" method="POST" enctype="multipart/form-data">
@@ -45,8 +45,8 @@
             
                 <div class="form">
                     <div class="input-container ic1" style="margin-bottom: 50px">
-                    <input id="amount" name="amount" class="input" type="text" placeholder=" " />
-                    <label for="amount" >Amount</label>
+                    <input id="amount" name="amount" class="input" type="text" placeholder="make payment" /><br>
+                    <label for="amount" >Amount <i class="fas fa-coins"></i></label>
 
                     <input id="user_id" name="user_id" value="{{ Auth::user()->user_id }}" class="input" type="hidden" placeholder=" " />
                     <input id="name" name="name" value="{{ Auth::user()->name }}" class="input" type="hidden" placeholder=" " />
@@ -57,7 +57,12 @@
                     
                     </div>
             
-            
+
+                    <div class="media-imgs">
+                        <img src="{{ asset('images/visa card.png') }}" alt="" class="media-img">
+                        <img src="{{ asset('images/paypal.png') }}" alt="" class="media-img">
+                    </div>
+
                     <button type="submit" class="submit">Continue</button>
                 </div>
             </form>
@@ -108,3 +113,4 @@
         });
 }
 </script>
+@endsection

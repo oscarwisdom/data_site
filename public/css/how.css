@@ -1,0 +1,39 @@
+.master{
+    display: grid;
+    grid-template-areas: "how many many many"
+                        "how many many many"
+                        "how many many many"
+                        "how many many many";
+}
+.how{
+    display: block;
+    position: fixed;
+    grid-area: how;
+    left: 0;
+    max-width: 400px;
+}
+.how-head{
+    text-align: center;
+    margin: 35px;
+}
+.how .explianation{
+    display: block;
+    position: fixed;
+    left: 0;
+    max-width: 400px;
+    margin-left: 20px;
+    border: 1px solid #000;
+    border-left: none;
+    border-radius: 20px;
+    padding: 20px 40px;
+    line-height: 60px;
+}
+.det{
+    padding: 10px;
+}
+.det summary::marker{
+    list-style: none;
+}
+.how-content{
+    grid-area: many;
+}

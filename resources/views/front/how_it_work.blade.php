@@ -1,34 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-</head>
-<body>
-    <div class="how">
-        <h1 class="how-head">
-            How It Works
-        </h1>
+@extends('layouts.otherpages')
+@section('content')
+<h1 class="how-head">
+    How It Works
+    </h1>
+<div class="master">
+<div class="how">
 
         <div class="explianation">
-            <details>
+            <details class="det">
                 <summary>Pay Bills</summary>
+                <a href="" class="exp-text">section 1</a>
+                <a href="" class="exp-text">section 2</a>
+                <a href="" class="exp-text">section 3</a>
             </details>
-            <details>
+            <details class="det">
                 <summary>Buy Airtime</summary>
+                <a href="" class="exp-text">section 1</a>
+                <a href="" class="exp-text">section 2</a>
+                <a href="" class="exp-text">section 3</a>
             </details>
-            <details>
+            <details class="det">
                 <summary>Buy Data</summary>
+                <a href="" class="exp-text">section 1</a>
+                <a href="" class="exp-text">section 2</a>
+                <a href="" class="exp-text">section 3</a>
             </details>
-            <details>
+            <details class="det">
                 <summary>View account details</summary>
+                <a href="" class="exp-text">section 1</a>
+                <a href="" class="exp-text">section 2</a>
+                <a href="" class="exp-text">section 3</a>
             </details>
-            <details>
+            <details class="det">
                 <summary>view account transactions</summary>
+                <a href="" class="exp-text">section 1</a>
+                <a href="" class="exp-text">section 2</a>
+                <a href="" class="exp-text">section 3</a>
             </details>
         </div>
+
     </div>
-</body>
-</html>
+    <div class="how-content">11</div>
+</div>
+    @endsection    
