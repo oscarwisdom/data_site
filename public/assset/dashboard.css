@@ -199,7 +199,7 @@ body{
     width: 100vw;
     height: 100vh;
     left: 300px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: auto;
     /* min-height: 100vh; */
     /* background: var(--bg-color-2); */
@@ -586,6 +586,9 @@ body{
   }
   .search .label{
     display: none;
+  }
+  .username{
+    font-size: 0.8rem;
   }
   .card{
     width: 60vw;

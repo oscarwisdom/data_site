@@ -30,6 +30,18 @@ Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']);
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/how', [App\Http\Controllers\HomeController::class, 'how_it_works']);
+Route::get('/features', [App\Http\Controllers\HomeController::class, 'features']);
+
+Route::get('/buy_item/{item}', [App\Http\Controllers\Front\BuyItemController::class, 'buy_item']);
+
+// service Route added by me
+Route::get('/nin', [App\Http\Controllers\HomeController::class, 'nin']);
+Route::get('/tin', [App\Http\Controllers\HomeController::class, 'tin']);
+Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_data']);
+Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
+Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
+Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
+
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {

@@ -44,8 +44,8 @@
                   <div class="user-details">
                       <i class="fa fa-user"></i>
                       <p>user details</p>
-                      <h1>{{ Auth::user()->name }}</h1>
-                      <h5>user id: {{ Auth::user()->user_id }}</h5>
+                      <h1 class="username">{{ Auth::user()->name }}</h1>
+                      <h5 class="user_id">user id: {{ Auth::user()->user_id }}</h5>
                   </div>
                   <div class="user-details simple">
                       <div class="we-chat">
@@ -59,5 +59,23 @@
               </div>
           </div>
 
+          <div class="card">
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Buy Data</h3> 
+                <p class="sup-details">Purchase your data plans at the cheapest rates...</p>
+                <div class="use-btn">
+                    <a href="{{ url('buy_item/data') }}" class="amount-btn">Continue</a>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Buy Airtime</h3> 
+                <p class="sup-details">Purchase your airtime fast and convenient...</p>
+                <div class="use-btn">
+                    <a href="{{ url('buy_item/airtime') }}" class="amount-btn">Continue</a>
+                </div>
+            </div>
+        </div>
   </div>
 @endsection

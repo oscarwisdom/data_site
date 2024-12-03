@@ -12,6 +12,10 @@
     <link rel="stylesheet" href={{ asset('css/style3.css') }}>
     <link rel="stylesheet" href={{ asset('css/style4.css') }}>
     <link rel="stylesheet" href={{ asset('css/swipper.css') }}>
+    <link rel="stylesheet" href={{ asset('css/slider.css') }}>
+    <link rel="stylesheet" href={{ asset('css/slider.css') }}>
+    {{-- <link rel="stylesheet" href={{ asset('css/responsive.css') }}> --}}
+    {{-- <link rel="stylesheet" href={{ asset('css/style.css') }}> --}}
 
 
 
@@ -31,14 +35,16 @@
     </div>
 
     <script src="{{ asset('assset/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assset/js/custom.js') }}"></script>
+    <script src="{{ asset('assset/js/bootstrap.js') }}"></script>
 
     <script>
         // import linkWrappe from 'assset/js/footer.js';
 
-        const regBtnHide = document.querySelector('.reg');
+        // const regBtnHide = document.querySelector('.reg');
         const harmBurger = document.querySelector('.fa-bars');
 
-        regBtnHide.addEventListener('click', () => regShow())
+        // regBtnHide.addEventListener('click', () => regShow())
 
         harmBurger.addEventListener('click', () => navList())
 

@@ -20,6 +20,7 @@
 </div>
 
 @include('includes.service')
-@include('includes.swipper')
+@include('includes.testimony')
+@include('includes.contact')
 @include('includes.footer')
 @endsection

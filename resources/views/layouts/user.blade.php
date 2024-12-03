@@ -7,7 +7,7 @@
     <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
 
     <!-- ===================================our style sheet ============================== -->
-     <link rel="stylesheet" href="dashboard.css">
+     <link rel="stylesheet" href="{{asset('assset/dashboard.css')}}">
 
      
 </head>

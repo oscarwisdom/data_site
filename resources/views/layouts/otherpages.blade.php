@@ -13,9 +13,10 @@
     <link rel="stylesheet" href={{ asset('css/style3.css') }}>
     <link rel="stylesheet" href={{ asset('css/style4.css') }}>
     <link rel="stylesheet" href={{ asset('css/swipper.css') }}>
+    <link rel="stylesheet" href={{ asset('css/features.css') }}>
     <link rel="stylesheet" href={{ asset('css/how.css') }}>
     <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
     @include('includes.nav')
@@ -25,10 +26,10 @@
     <script>
         // import linkWrappe from 'assset/js/footer.js';
 
-        const regBtnHide = document.querySelector('.reg');
+        // const regBtnHide = document.querySelector('.reg');
         const harmBurger = document.querySelector('.fa-bars');
 
-        regBtnHide.addEventListener('click', () => regShow())
+        // regBtnHide.addEventListener('click', () => regShow())
 
         harmBurger.addEventListener('click', () => navList())
 
@@ -40,7 +41,7 @@
             $('.ul').toggle();
         }
 
-        </script>
+    </script>
         <script src="{{ asset('assset/js/footer.js') }}"></script>
         <script src="{{ asset('assset/js/swipper.js') }}"></script>
 </body>

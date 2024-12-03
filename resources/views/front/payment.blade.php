@@ -28,13 +28,13 @@
                             @csrf
                         </form>
                     </div>
-          
+
               {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
               <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
               <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label> --}}
           </div>
       </div>
-          
+
           <div>
             <div class="home">
                 <i class="fas fa-money-bill-1" aria-hidden="true"></i>
@@ -42,11 +42,11 @@
             </div>
             <form id="makePaymentForm" method="POST" enctype="multipart/form-data">
                 @csrf
-            
+
                 <div class="form">
                     <div class="input-container ic1" style="margin-bottom: 50px">
-                    <input id="amount" name="amount" class="input" type="text" placeholder="make payment" /><br>
-                    <label for="amount" >Amount <i class="fas fa-coins"></i></label>
+                    <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
+                    <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
 
                     <input id="user_id" name="user_id" value="{{ Auth::user()->user_id }}" class="input" type="hidden" placeholder=" " />
                     <input id="name" name="name" value="{{ Auth::user()->name }}" class="input" type="hidden" placeholder=" " />
@@ -54,13 +54,8 @@
                     <input id="phone" name="phone" value="{{ Auth::user()->phone }}" class="input" type="hidden" placeholder=" " />
                     <input id="tx_ref" name="tx_ref" value="{{ time() }}" class="input" type="hidden" placeholder=" " />
                     <input id="title" name="title" value="{{ $settings->website_title }}" class="input" type="hidden" placeholder=" " />
-                    
-                    </div>
-            
+                    <input id="logo" name="logo" value="{{ $settings->logo }}" class="input" type="hidden" placeholder=" " />
 
-                    <div class="media-imgs">
-                        <img src="{{ asset('images/visa card.png') }}" alt="" class="media-img">
-                        <img src="{{ asset('images/paypal.png') }}" alt="" class="media-img">
                     </div>
 
                     <button type="submit" class="submit">Continue</button>
@@ -84,12 +79,13 @@
         var name = document.getElementById('name').value;
         var tx_ref = document.getElementById('tx_ref').value;
         var title = document.getElementById('title').value;
+        var logo = document.getElementById('logo').value;
 
-        makePayment(amount,user_id,tx_ref,email,phone,name,title);
-        
+        makePayment(amount,user_id,tx_ref,email,phone,name,title,logo);
+
     });
 
-    function makePayment(amount,user_id,tx_ref,email,phone,name,title) {
+    function makePayment(amount,user_id,tx_ref,email,phone,name,title,logo) {
         FlutterwaveCheckout({
             public_key: "FLWSECK_TEST-41a99426c1734b81a4d2c4c366a3b372-X",
             tx_ref,
@@ -108,7 +104,7 @@
             customizations: {
             title: `${title} Services Limited`,
             description: "Deposit money into dashboard",
-            logo: "http://127.0.0.1:8000/uploads/67457f7f4fe73.jpeg",
+            logo: `http://127.0.0.1:8000/uploads/${logo}`,
             }
         });
 }
