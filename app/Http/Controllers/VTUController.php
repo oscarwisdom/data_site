@@ -50,7 +50,7 @@ class VTUController extends Controller
             $result = json_decode($response);
 
             if($result->content->transactions->status === "delivered"){
-                
+
                 return redirect('/home')->with('message', 'Airtime Purchased Successfully'); 
              }
              else{
@@ -59,7 +59,7 @@ class VTUController extends Controller
 
         }
         else {
-            return redirect()->back()->with('message', 'Insufficient balance');
+            return redirect()->back()->with('message', 'Insufficient Balance');
         }
     }
 }
