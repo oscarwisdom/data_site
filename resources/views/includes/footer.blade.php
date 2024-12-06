@@ -34,12 +34,13 @@
             </ul>
         </div>
         <div class="footer-box">
-            <ul class="ul-list">
-                <li class="footer-list"><a href="" class="footer-link active">DataPlug Office Address</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempore omnis dolor culpa distinctio ratione molestiae!</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo repellendus consectetur dolores quis vitae voluptate veritatis libero porro earum!</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos asperiores dignissimos molestiae architecto dolores fuga tempora, officia, ullam quisquam provident fugiat omnis sit?</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, magnam ipsa? Culpa incidunt dolor natus ipsum neque? Quos autem iure ipsum voluptas assumenda dolores, dolorem eius sapiente. Repellendus, quas consequatur?</a></li>
+            <img class="arrow-svg" src="{{ asset('assset/img/arrow.svg') }}" alt="" width="20px" style="cursor: pointer" onclick="showLinks()">
+            <ul class="ul-list active" id="active-hide">
+                <li class="footer-list"><a href="" class="footer-link active" id="hls">DataPlug Office Address</a></li>
+                <li class="footer-list"><a href="" class="footer-link" id="lsh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempore omnis dolor culpa distinctio ratione molestiae!</a></li>
+                <li class="footer-list"><a href="" class="footer-link" id="lsh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo repellendus consectetur dolores quis vitae voluptate veritatis libero porro earum!</a></li>
+                <li class="footer-list"><a href="" class="footer-link" id="lsh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos asperiores dignissimos molestiae architecto dolores fuga tempora, officia, ullam quisquam provident fugiat omnis sit?</a></li>
+                <li class="footer-list"><a href="" class="footer-link" id="lsh">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, magnam ipsa? Culpa incidunt dolor natus ipsum neque? Quos autem iure ipsum voluptas assumenda dolores, dolorem eius sapiente. Repellendus, quas consequatur?</a></li>
             </ul>
         </div>
     </div>

@@ -4,7 +4,7 @@
         <p class="wallet-balance-title">Wallet Balance</p>
         <h2 id="input-amount"><i class="fas fa-naira-sign" aria-hidden="true"></i>{{ Auth::user()->balance }}</h2>
     </div>
-    
+
     <ul>
         <li>
             <a href={{ url('home') }}>
@@ -24,14 +24,14 @@
             </a>
         </li>
 
-        {{-- <li>
-            <a href="">
+        <li>
+            <a href={{ url('payment') }}>
                 <span class="icon">
                 <i class="fa fa-wallet v1"></i>
                 </span>
-                <span class="title">Wallet</span>
+                <span class="title">Payments</span>
             </a>
-        </li> --}}
+        </li>
 
         <li>
             <a href={{ url('transactions') }}>

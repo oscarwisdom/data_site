@@ -24,6 +24,7 @@
         <div class="service-box1">
             <h2 class="services-head-text">{{ __('Fund your Account, make Transfers, Pay Bills') }}</h2>
 
+<<<<<<< HEAD
             <p class="services-text">
                 {{ __('
                 Live life on your own terms! Add money to your
@@ -38,4 +39,10 @@
                     asset('images/stock-vector-e-store-and-e-commerce-website-for-shopping-online-flat-line-vector-illustration-of-cute-woman-1855045951.jpg') }}" alt="" class="service-box2">
     </div>
 </div>
+=======
+@include('includes.service')
+@include('includes.testimony')
+@include('includes.contact')
+@include('includes.footer')
+>>>>>>> 756f0c59c3a75071823f38720999f59abf877f4c
 @endsection

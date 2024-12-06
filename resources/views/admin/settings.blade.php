@@ -33,7 +33,7 @@
                     <div class="input-container ic2" style="margin-bottom: 50px">
                         @if ($settings)
                             <label for="">Current Logo: </label>
-                            <img src="{{ asset('uploads/'.$settings->logo) }}" width="100px" alt=""><br><br>
+                            {{-- <img src="{{ asset('uploads/'.$settings->logo) }}" width="100px" alt=""><br><br> --}}
                         @endif
                         <input id="logo" name="logo" class="input" type="file" placeholder=" " />
                         <label for="logo" >Logo</label>
@@ -41,7 +41,7 @@
                     <div class="input-container ic2" style="margin-bottom: 50px">
                         @if ($settings)
                             <label for="">Current Favicon: </label>
-                            <img src="{{ asset('uploads/'.$settings->favicon) }}" width="100px" alt=""><br><br>
+                            {{-- <img src="{{ asset('uploads/'.$settings->favicon) }}" width="100px" alt=""><br><br> --}}
                         @endif
                         <input id="favicon" name="favicon"  class="input" type="file" placeholder=" " />
                         <label for="favicon" >Favicon</label>

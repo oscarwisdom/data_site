@@ -35,8 +35,51 @@
           </div>
       </div>
           
-          <div>
-            
+          <div class="help">
+            <div class="help-box">
+                <div class="help-text">
+                  Help
+                </div>
+                <div id="help-dropdown-wrapper">
+                    <details>
+                        <summary>
+                            view Amount details
+                        </summary>
+                        <div class="help-dropdown">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div id="help-dropdown-wrapper">
+                    <details>
+                        <summary>
+                            view Amount details
+                        </summary>
+                        <div class="help-dropdown">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div id="help-dropdown-wrapper">
+                    <details>
+                        <summary>
+                            view Amount details
+                        </summary>
+                        <div class="help-dropdown">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
+                        </div>
+                    </details>
+                </div>
+
+            </div>
           </div>
 </div>
 @endsection

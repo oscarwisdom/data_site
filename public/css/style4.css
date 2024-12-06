@@ -1,6 +1,7 @@
 footer
 {
     display: block;
+    /* position: relative; */
 }
 
 .iner-footer
@@ -39,7 +40,11 @@ footer
 .data-plug-footer .socia-media .icons:hover
 {
     background: rgba(128, 128, 128, 0.774);
-    transform: scale(1.1); 
+    transform: scale(1.1);
+}
+.arrow-svg
+{
+    display: none;
 }
 @media (max-width: 700px)
 {
@@ -47,5 +52,19 @@ footer
     {
         flex-direction: column;
         padding: 10px;
+    }
+    .iner-footer .footer-box .ul-list .footer-list #hsl
+    {
+        display: block;
+        color: red;
+    }
+    .arrow-svg
+    {
+        display: inline-block;
+        margin-left: 40px;
+    }
+    .iner-footer .footer-box .ul-list.active
+    {
+        display: none;
     }
 }

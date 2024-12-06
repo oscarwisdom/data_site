@@ -7,7 +7,8 @@
     <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
 
     <!-- ===================================our style sheet ============================== -->
-     <link rel="stylesheet" href="dashboard.css">
+     <link rel="stylesheet" href="{{asset('assset/dashboard.css')}}">
+     <link rel="stylesheet" href="{{asset('assset/help.css')}}">
 
      
 </head>
@@ -25,5 +26,6 @@
     <script src="dashboard.js"></script>
     <!-- <script src="pre-loader.js"></script> -->
      <script src="profile.js"></script>
+     
 </body>
 </html>
