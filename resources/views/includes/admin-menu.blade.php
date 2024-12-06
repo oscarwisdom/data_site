@@ -11,7 +11,7 @@
         <li><a href="{{ url('admin/users') }}"><img src="icons/users.svg" alt="" class="icons">Users</a></li>
         <li><a href="#"><img src="icons/form.svg" alt="" class="icons">API Management</a></li>
         <li><a href="#"><img src="icons/credit-card.svg" alt="" class="icons">Transactions</a></li>
-        <li><a href="#"><img src="icons/table.svg" alt="" class="icons">Profile</a></li>
+        <li><a href="{{ url('admin/profile') }}"><img src="icons/table.svg" alt="" class="icons">Profile</a></li>
         <li><a href="{{ url('admin/settings') }}"><img src="icons/settings.svg" alt="" class="icons">Settings</a></li>
         <li onclick="return confirm('Are you sure to logout?')">
             <a class="dropdown-item" href="{{ route('logout') }}"

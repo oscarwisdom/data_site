@@ -20,7 +20,7 @@ Route::get('/', [PagesController::class, "index"]);
 
 Auth::routes();
 
-// User Routess
+// User Routess 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
@@ -31,6 +31,9 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
+    Route::get('/profile', [AdminController::class, 'profile']);
+    Route::put('/profile', [AdminController::class, 'update_profile']);
+    Route::put('/password', [AdminController::class, 'update_password']);
     Route::get('/settings', [AdminController::class, 'get_settings']);
     Route::post('/settings', [AdminController::class, 'update_settings']);
 });

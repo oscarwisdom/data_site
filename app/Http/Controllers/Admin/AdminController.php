@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,6 +26,43 @@ class AdminController extends Controller
         return view('admin.users',
         ['users' => $users]
     );
+    }
+
+    public function profile() {
+        $user = User::where('id',Auth::user()->id)->get();
+
+        return view('admin.profile',
+        ['user' => $user]
+    );
+    }
+
+    public function update_profile(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'phone' => 'required|string|max:255'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('message', 'Error Updating Admin Profile');
+        }
+
+        $admin = User::where('role','1')->first();
+
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->phone = $request->phone;
+        $admin->update();
+
+        return redirect('admin/profile')->with('message', 'Personal Information Updated Successfully');
+    }
+
+    public function update_password(Request $request) {
+
+        // continue from last class
+
+        
     }
 
     public function get_settings() {

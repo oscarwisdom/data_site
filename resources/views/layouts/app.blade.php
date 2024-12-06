@@ -6,7 +6,10 @@
     @php
         $settings = App\Models\Settings::where('id',1)->first();
     @endphp
-    <title>@if ($settings) {{ $settings->website_title }}@endif</title>
+    <title>@if ($settings) {{$settings->website_title }}@endif</title>
+    <meta name="keywords" content="@if ($settings) {{$settings->keywords }}@endif">
+    <meta name="description" content="@if ($settings) {{$settings->description }}@endif">
+
     <link rel="stylesheet" href={{ asset('css/style1.css') }}>
     <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
     <link rel="stylesheet" href={{ asset('css/style3.css') }}>
@@ -27,6 +30,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('includes.footer')
     </div>
 
     <script src="{{ asset('assset/js/jquery.min.js') }}"></script>
