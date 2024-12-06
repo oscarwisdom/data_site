@@ -53,14 +53,38 @@
                 </form>           
 
               @elseif($item == "airtime")
-              <form id="makePaymentForm" method="POST" enctype="multipart/form-data">
+
+              @if (session('message'))
+                <script>
+                    alert('{{ session('message') }}');
+                </script>
+              @endif
+
+              <form action="{{ url('buy-airtime') }}" method="POST">
                     @csrf
 
-                    <div class="form">
-                        <div class="input-container ic1" style="margin-bottom: 50px">
-                        <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
-                        <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
+                        <div class="form">
+                            <div class="input-container ic1" style="margin-bottom: 50px">
+                            <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
+                            <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
 
+                        </div>
+
+                        <div class="input-container ic1" style="margin-bottom: 50px">
+                            <input id="phone" name="phone" class="input" type="text" style="color: black;"/><br>
+                            <label for="phone" >Enter Phone <i class="fas fa-coins"></i></label>
+    
+                        </div>
+
+                        <div class="input-container ic1" style="margin-bottom: 50px">
+                            <select name="operator" id="">
+                                <option value="">--Choose an Operator</option>
+                                <option value="mtn">MTN</option>
+                                <option value="airtel">Airtel</option>
+                                <option value="glo">Glo</option>
+                                <option value="etisalat">9mobile</option>
+                            </select>
+    
                         </div>
 
                         <button type="submit" class="submit">Continue</button>

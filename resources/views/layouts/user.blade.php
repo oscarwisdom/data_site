@@ -8,6 +8,7 @@
 
     <!-- ===================================our style sheet ============================== -->
      <link rel="stylesheet" href="{{asset('assset/dashboard.css')}}">
+     <link rel="stylesheet" href="{{asset('assset/help.css')}}">
 
      
 </head>

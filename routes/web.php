@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\controllers\Front\PagesController;
+use App\Http\Controllers\VTUController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, "index"]);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/how', [PagesController::class, 'how_it_works']);
+Route::get('/features', [PagesController::class, 'features']);
 
 Auth::routes();
 
@@ -28,9 +32,9 @@ Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']);
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
-Route::get('/how', [App\Http\Controllers\HomeController::class, 'how_it_works']);
-Route::get('/features', [App\Http\Controllers\HomeController::class, 'features']);
+
+// VTU Routes
+Route::post('/buy-airtime', [VTUController::class, 'buy_airtime']);
 
 Route::get('/buy_item/{item}', [App\Http\Controllers\Front\BuyItemController::class, 'buy_item']);
 

@@ -117,20 +117,6 @@ class HomeController extends Controller
         return view('front.settings');
     }
 
-    public function about()
-    {
-        return view('front.about');
-    }
-
-    public function how_it_works()
-    {
-        return view('front.how_it_work');
-    }
-    public function features()
-    {
-        return view('front.features');
-    }
-
 
     // services section
 

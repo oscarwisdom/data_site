@@ -60,6 +60,11 @@
           </div>
 
           <div class="card">
+            @if (session('message'))
+                <script>
+                    alert('{{ session('message') }}');
+                </script>
+              @endif
             <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Data</h3> 
