@@ -8,22 +8,32 @@ use Illuminate\Support\Facades\Auth;
 
 class VTUController extends Controller
 {
-    public function buy_airtime(Request $request) {
+    // this is were we setup the vtpass api logic
+    public function buy_airtime(Request $request) { 
+        ######### we take in the request for the input button we are using from the form 💻 #########
 
+        // this part is is were we set up the timezone to be africa/lagos so this just changes the timezone for entre script
         date_default_timezone_set('Africa/Lagos');
 
+        // take a request to get the name of the input tag in blade file using this controller
         $amount = $request->input('amount');
 
+        // we access the culome in the DB and work with it in a variable called $balance
         $balance = Auth::user()->balance;
 
-        if ($balance >= $amount) {
+        // this logic is purchase of the Airtime
+        if ($balance >= $amount) { // if th balance is greater than or equal to amount
 
+            // then the amount being requested from the user and substract the balance from the user table
             Auth::user()->decrement('balance', $amount);
 
+            // this are the required field to fill which is in our form 
             $phone = $request->input('phone');
             $operator = $request->input('operator');
+            // set the time to be current time being used in this system
             $datetime = now()->format('YmdHi');
 
+            // store the datetime variable in the request_id variable then we make it generate random number between 10000 t0 99999
             $request_id = $datetime.rand(10000,99999);
 
             $apiUrl = 'https://sandbox.vtpass.com/api/pay';

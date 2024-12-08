@@ -1,0 +1,57 @@
+.transaction{
+    background: rgb(207, 141, 141);
+}
+.transaction .card-trac{
+    background: #fff;
+    padding: 20px;
+}
+.transaction .card-trac .card-header{
+    /* display: inline; */
+    padding: 20px;
+    background: rgb(11, 11, 87);
+    font-size: 2rem;
+    display: inline-flex;
+    gap: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+}
+.card-body{
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: 12px 10px 30px #000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+#chart{
+    width: 30%;
+}
+.transaction-details-txt{
+    color: #102b86;
+}
+#pieChart{
+    max-width: 100%;
+}
+#myChart{
+    width: 100%;
+    height: 300px;
+
+}
+
+@media (max-width: 768px) {
+    #chart, #pieChart {
+        width: 100%;
+        height: 500px;
+    }
+    .card-body{
+        padding: 5px;
+        box-shadow: 0 0 0 #000;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .transaction .card-trac .card-header{
+        font-size: 1rem;
+    }
+}

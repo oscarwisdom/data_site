@@ -24,7 +24,6 @@
         <div class="service-box1">
             <h2 class="services-head-text">{{ __('Fund your Account, make Transfers, Pay Bills') }}</h2>
 
-<<<<<<< HEAD
             <p class="services-text">
                 {{ __('
                 Live life on your own terms! Add money to your
@@ -39,10 +38,34 @@
                     asset('images/stock-vector-e-store-and-e-commerce-website-for-shopping-online-flat-line-vector-illustration-of-cute-woman-1855045951.jpg') }}" alt="" class="service-box2">
     </div>
 </div>
-=======
-@include('includes.service')
+
+<div class="services">
+    <h1 class="our-services" style="text-align: center;">About Us</h1>
+    <div class="services-box">
+        <div class="service-box1">
+            <h2 class="services-head-text">{{ __('Your Favourite payment methods') }}</h2>
+
+            <p class="services-text">
+                {{ __('
+                we as dataPlug don"t just give you a Realiable Banking activity 
+                both also give your account serve banking') }}
+            </p>
+        </div>
+        <img
+            src="
+                {{
+                    asset('assset/img/SmartCity_connect_900.jpg') }}" alt="" class="service-box2">
+    </div>
+
+    <div class="services">
+        <div class="services-box">
+            <div class="service-box1">
+                <video src="{{ asset('images/1081905350-preview.mp4') }}" controls autoplay loop></video>
+            </div>
+            <video src="{{ asset('images/1073657882-preview.mp4') }}" class="service-box2" controls autoplay loop>
+        </div>
+    </div>
+
 @include('includes.testimony')
 @include('includes.contact')
-@include('includes.footer')
->>>>>>> 756f0c59c3a75071823f38720999f59abf877f4c
 @endsection
