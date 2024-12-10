@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="main">
+<div class="main" style="overflow: auto">
     <div class="topbar">
       <div class="toggle">
           <i class="fa fa-navicon"></i>
@@ -35,19 +35,22 @@
           </div>
       </div>
           
-          <div class="help">
+          {{-- <div class="help"> --}}
             <div class="help-box">
-                <div class="help-text">
-                  Help
+                <div class="home">
+                    <i class="fas fas fa-question" aria-hidden="true"></i>
+                    <p>Help</p>
                 </div>
                 <div id="help-dropdown-wrapper">
                     @foreach ($helps as $help)
-                    <details>
+                    <details id="help-brodcast">
                         <summary>
                             {{ $help->category }}
                         </summary>
                         <div class="help-dropdown">
                             <p>{{ $help->content }}</p>
+                            {{-- <video src=""></video> --}}
+                            {{-- <img src="" alt=""> --}}
                         </div>
                     </details>
                     @endforeach
@@ -80,6 +83,6 @@
                 </div> --}}
 
             </div>
-          </div>
+          {{-- </div> --}}
 </div>
 @endsection

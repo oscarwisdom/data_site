@@ -84,6 +84,11 @@ body {
     flex-direction: column;
     position: relative;
 }
+#complete{
+    background: #fff;
+    padding: 20px 50px;
+    margin-top: 20px;
+}
 #interface .navigation {
     display: flex;
     align-items: center;

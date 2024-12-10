@@ -898,3 +898,70 @@ body{
   .submit:active {
     background-color: #06b;
   }
+
+  #help-brodcast{
+    font-size: 40px;
+    margin-top: 40px;
+    color: #202022;
+  }
+  #help-brodcast > summary{
+    font-size: 20px;
+  }
+  .help-dropdown{
+    padding: 30px 0;
+  }
+  #help-brodcast .help-dropdown > p{
+    font-size: 18px;
+    color: #202022;
+  }
+
+  #help-brodcast:hover{
+    color: #06b;
+  }
+  #help-dropdown-wrapper{
+    padding: 0 2px;
+  }
+  @media (max-width: 768px){
+    #help-dropdown-wrapper{
+      padding: 0;
+    }
+    #help-brodcast:hover.help-dropdown{
+      display: block;
+    }
+    /* #help-brodcast.help-dropdown{
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      width: 200px;
+    } */
+    .help{
+      background: blue;
+      padding: 0;
+    }
+    .help-box{
+      /* margin-left: -50px; */
+      padding: 0 2px;
+      /* background: red; */
+    }
+    #help-brodcast > summary{
+      font-size: 20px;
+      margin-left: -20px;
+    }
+    .help-dropdown{
+      padding: 10px 0;
+    }
+  
+  }
+
+  @media (max-width: 360px){
+    #help-brodcast > summary{
+      font-size: 20px;
+    }
+    #help-brodcast{
+      font-size: 30px;
+      color: #202022;
+    } 
+  }
