@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Help;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Settings;
@@ -97,6 +98,12 @@ class HomeController extends Controller
 
     }
 
+    public function view_transaction_table()
+    {
+        // $trac = Payments::all();
+        return view('front.view_transaction_table'
+    /*['trac' => $trac]*/);
+    }
     public function services()
     {
         return view('front.services');
@@ -109,7 +116,10 @@ class HomeController extends Controller
 
     public function help()
     {
-        return view('front.help');
+        $helps = Help::all();
+        return view('front.help', [
+            'helps' => $helps
+        ]);
     }
 
     public function settings()

@@ -6,7 +6,7 @@
       <div class="toggle">
           <i class="fa fa-navicon"></i>
       </div>
-      <{{-- div class="search">
+      {{-- div class="search">
           <label class="label">
               <input type="text" placeholder="search here" id="search">
               <i class="fa fa-search"></i>
@@ -41,6 +41,19 @@
                   Help
                 </div>
                 <div id="help-dropdown-wrapper">
+                    @foreach ($helps as $help)
+                    <details>
+                        <summary>
+                            {{ $help->category }}
+                        </summary>
+                        <div class="help-dropdown">
+                            <p>{{ $help->content }}</p>
+                        </div>
+                    </details>
+                    @endforeach
+                </div>
+
+                {{-- <div id="help-dropdown-wrapper">
                     <details>
                         <summary>
                             view Amount details
@@ -64,20 +77,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
                         </div>
                     </details>
-                </div>
-
-                <div id="help-dropdown-wrapper">
-                    <details>
-                        <summary>
-                            view Amount details
-                        </summary>
-                        <div class="help-dropdown">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, non cupiditate culpa porro aliquam ad necessitatibus repellat incidunt rem laboriosam.</p>
-                        </div>
-                    </details>
-                </div>
+                </div> --}}
 
             </div>
           </div>

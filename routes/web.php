@@ -30,6 +30,7 @@ Route::get('/payment', [App\Http\Controllers\HomeController::class, 'payment']);
 Route::get('/make_payment', [App\Http\Controllers\HomeController::class, 'make_payment']);
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
+Route::get('/view_transaction_table', [App\Http\Controllers\HomeController::class, 'view_transaction_table']);
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']);
 
@@ -56,4 +57,6 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::put('/password', [AdminController::class, 'update_password']);
     Route::get('/settings', [AdminController::class, 'get_settings']);
     Route::post('/settings', [AdminController::class, 'update_settings']);
+    Route::post('/add_help', [AdminController::class, 'add_help']);
+    Route::delete('/delete_help', [AdminController::class, 'delete_help']);
 });

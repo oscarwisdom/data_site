@@ -53,6 +53,9 @@
                 <div id="chart">
                   <canvas id="pieChart" style="max-width: 100%"></canvas>
                 </div>
+                <div id="chart">
+                  <a href="{{ url('/view_transaction_table') }}">Transaction History</a>
+                </div>
             </div>
             </div>
         </div>

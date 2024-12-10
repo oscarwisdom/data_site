@@ -33,7 +33,7 @@
                     <div class="input-container ic2" style="margin-bottom: 50px">
                         @if ($settings)
                             <label for="">Current Logo: </label>
-                            {{-- <img src="{{ asset('uploads/'.$settings->logo) }}" width="100px" alt=""><br><br> --}}
+                            <img src="{{ asset('uploads/'.$settings->logo) }}" width="100px" alt=""><br><br>
                         @endif
                         <input id="logo" name="logo" class="input" type="file" placeholder=" " />
                         <label for="logo" >Logo</label>
@@ -41,7 +41,7 @@
                     <div class="input-container ic2" style="margin-bottom: 50px">
                         @if ($settings)
                             <label for="">Current Favicon: </label>
-                            {{-- <img src="{{ asset('uploads/'.$settings->favicon) }}" width="100px" alt=""><br><br> --}}
+                            <img src="{{ asset('uploads/'.$settings->favicon) }}" width="100px" alt=""><br><br>
                         @endif
                         <input id="favicon" name="favicon"  class="input" type="file" placeholder=" " />
                         <label for="favicon" >Favicon</label>
@@ -57,9 +57,63 @@
                     <button type="submit" class="submit">Save</button>
                 </div>
             </form>
+
+
+            {{-- this is the section i added settings or CMS for adding  help post--}}
+            <form action="{{ url('admin/add_help') }}" method="POST" enctype="multipart/form-data">
+                <h1 style="color: rgb(18, 18, 59)">Add help</h1>
+                @csrf
+
+                <div class="form">
+                    <div class="input-container ic1" style="margin-bottom: 50px">
+                    <input id="title" name="category" value="" class="input" type="text" placeholder=" " />
+                    <label for="title" >Category</label>
+                    </div>
+                    <div class="input-container ic2" style="margin-bottom: 30px">
+                    <textarea id="description" name="content" class="input" cols="100" rows="15"></textarea>
+                    <label for="description" >Content</label>
+                    </div>
+                    <div class="input-container ic2" style="margin-bottom: 50px">
+                        {{-- @if ($settings)
+                            <label for="">Current Logo: </label>
+                            <img src="{{ asset('uploads/'.$settings->logo) }}" width="100px" alt=""><br><br>
+                        @endif --}}
+                        <input id="logo" name="help_video" class="input" type="file" placeholder=" " />
+                        <label for="logo" >Help video</label>
+                    </div><br><br><br><br>
+                    <div class="input-container ic2" style="margin-bottom: 50px">
+                        {{-- @if ($settings)
+                            <label for="">Current Favicon: </label>
+                            <img src="{{ asset('uploads/'.$settings->favicon) }}" width="100px" alt=""><br><br>
+                        @endif --}}
+                        <input id="favicon" name="help_img"  class="input" type="file" placeholder=" " />
+                        <label for="favicon" >Help image</label>
+                    </div><br><br><br><br>
+                    <button type="submit" class="submit">Save</button>
+                </div>
+            </form>
         </div>
 
-        
+        <details style="margin-top: 500px;padding: 40px 40px">
+            <summary>Delete Help</summary>
+            <p>Delete a help post by entering the category of the post you want to delete.</p>
+        <div class="values">
+            <form action="{{ url('admin/delete_help') }}" method="POST">
+                @csrf
+                @method('delete')
+                <h1>Delete Help</h1>
+                <div class="form">
+                    <div class="input-container ic1" style="margin-bottom: 50px">
+                        <input type="text" name="category" class="input" placeholder="Enter help content category" required>
+                        <label for="category">Category</label>
+                    </div>
+                    <button type="submit" class="submit">Delete</button>
+                </div>
+            </form>
+        </div>
+        </details>
+
+
     </section>
 
 @endsection

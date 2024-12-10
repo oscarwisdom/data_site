@@ -13,6 +13,7 @@
 <link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
 <link rel="stylesheet" href={{ asset('css/style3.css') }}>
 <link rel="stylesheet" href={{ asset('css/style4.css') }}>
+<link rel="stylesheet" href="{{ asset('css/regis.css') }}">
 
 
 

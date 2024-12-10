@@ -17,6 +17,12 @@
     </div>
     <img src={{ asset('images/data.png.jpg') }} class="features-img arc">
 
+    <marquee>
+        <img src="{{ asset('images/ait.png') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('images/download (7).png') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('images/nine.png') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('images/glo.jpg') }}" alt="" style="margin-left: 20px">
+    </marquee>
 </div>
 <div class="services">
     <h1 class="our-services">Our Services</h1>

@@ -25,7 +25,8 @@ class VTUController extends Controller
         if ($balance >= $amount) { // if th balance is greater than or equal to amount
 
             // then the amount being requested from the user and substract the balance from the user table
-            Auth::user()->decrement('balance', $amount);
+            Auth::user()->decreament('balance', $amount);
+            
 
             // this are the required field to fill which is in our form 
             $phone = $request->input('phone');
@@ -58,6 +59,7 @@ class VTUController extends Controller
             // After executing the request
             $response = curl_exec($ch);
             $result = json_decode($response);
+
 
             if($result->content->transactions->status === "delivered"){
 

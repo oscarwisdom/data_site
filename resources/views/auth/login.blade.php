@@ -1,9 +1,9 @@
-@extends('layouts.app') 
+@extends('layouts.reg') 
 
-@section('content')
+@section('section')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8" id="section-form">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ route('register') }}">create account</a>
                 </div>
             </div>
         </div>

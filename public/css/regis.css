@@ -1,0 +1,6 @@
+#section-form{
+    margin-top: 70px;
+}
+#email:invalid{
+    border: 1px solid rgb(214, 16, 16);
+}

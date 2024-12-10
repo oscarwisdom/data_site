@@ -10,6 +10,8 @@ body {
     width: 100%;
     background: #E5E7EB;
     position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
     display: flex;
 }
 #menu {
@@ -78,17 +80,22 @@ body {
 #interface {
     width: calc(100% - 300px);
     margin-left: 300px;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 #interface .navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 75vw;
+    width: 100%;
     background: #fff;
+    top: 0;
+    left: 0;
     padding: 15px 30px;
+    /* margin-left: 20px; */
     border-bottom: 3px solid #594ef7;
-    position: fixed;
+    position: relative;
 }
 #interface .navigation .search {
     display: flex;
