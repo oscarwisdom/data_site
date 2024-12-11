@@ -35,9 +35,11 @@ class AdminController extends Controller
 
     public function profile() {
         $user = User::where('id',Auth::user()->id)->get();
+        
 
-        return view('admin.profile',
-        ['user' => $user]
+        return view('admin.profile',[
+            'user' => $user
+            ]
     );
     }
 
@@ -183,9 +185,12 @@ class AdminController extends Controller
 
     public function get_settings() {
         $settings = Settings::where('id','1')->first();
+        $helps = Help::all();
+        
 
         return view('admin.settings', [
-            'settings' => $settings
+            'settings' => $settings,
+            'helps' => $helps
         ]);
     }
 
@@ -270,13 +275,19 @@ class AdminController extends Controller
         $average = $transactions->count() > 0 ? $sum / $transactions->count() : 0;
         $percentage = $transactions->count() > 0 ? ($sum / ($transactions->count() * $average)) * 100 : 0;
 
+        $all = Transactions::all()->where('product_name', 'MTN Airtime VTU');
+        // $prd = Transactions::where('id',)->get();
+        $sum_prd = $all->sum('amount');
+        $mtn_sum = $all->count() > 0 ? $sum_prd: 0;
+
 
 
         return view('admin.transactions',[
             'transactions' => $transactions,
             'sum' => $sum,
             'average' => $average,
-            'percentage' => $percentage
+            'percentage' => $percentage,
+            'mtn_sum' => $mtn_sum
         ]);
     }
 
@@ -288,6 +299,9 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','User Deleted Successfully');
     }
+
+
+    
 
     public function api_manegement()
     {

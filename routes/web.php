@@ -66,4 +66,5 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/transactions', [AdminController::class, 'get_transactions']);
     Route::delete('/user-delete/{user_id}', [AdminController::class, 'user_delete']);
     Route::get('/api_manegement', [AdminController::class, 'api_manegement']);
+    Route::delete('/help-delete/{help_id}', [AdminController::class, 'help_delete']);
 });

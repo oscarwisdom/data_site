@@ -289,6 +289,11 @@ tbody tr td {
         width: 100%;
         border-collapse: collapse;
     }
+    #help-delete-btn{
+        margin-top: 100px;
+        background: #15172b;
+        font-size: 1.3rem;
+      }
 }
 
 @media (max-width: 477px) {
@@ -439,6 +444,23 @@ tbody tr td {
   }
 
   #delete-btn{
-    padding: 20px 30px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: all 0.6s ease-in-out;
   }
+  #delete-btn:hover{
+    cursor: pointer;
+    background-color: #06b;
+    color: #fff;
+  }
+  #help-delete-btn{
+    background: #15172b;
+    font-size: 1rem;
+    color: #fff;
+    padding: 10px;
+  }
+  #help-delete-btn li{
+    margin-top: 20px;
+  }
+  
   

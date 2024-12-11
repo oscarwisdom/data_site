@@ -77,6 +77,7 @@
                 <div class="total-amount">the total amount of money: {{ $sum }}</div>
                 <div class="averg">the average: {{ $average }}</div>
                 <div class="percentage">Percentage of Transactions: {{ $percentage }}%</div>
+                <div>amount used with mtn {{ $mtn_sum }}</div>
             </div>
         </div>
     </section>

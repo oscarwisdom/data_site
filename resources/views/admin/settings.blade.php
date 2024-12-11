@@ -20,6 +20,11 @@
         </div>
 
         <h3 class="i-name">Settings</h3>
+        @if (session('message'))
+        <script>
+            alert('{{ session('message') }}')
+        </script>
+    @endif
 
         <div class="values">
             <form action="{{ url('admin/settings') }}" method="POST" enctype="multipart/form-data">
@@ -116,6 +121,16 @@
                         </div>
                     </div>
                 </form>
+                <ul id="help-delete-btn">
+                    @foreach ($helps as $item)
+                    {{-- <form action="/" method="POST"> --}}
+                        {{-- @csrf --}}
+                        {{-- @method('DELETE') --}}
+                        <li>{{ $item->category }}</li>
+    
+                    {{-- </form> --}}
+                    @endforeach
+                </ul>
                 </details>
         </div>
 

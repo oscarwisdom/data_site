@@ -43,16 +43,20 @@
                 </div>
                 <div id="help-dropdown-wrapper">
                     @foreach ($helps as $help)
-                    <details id="help-brodcast">
-                        <summary>
+                    <div id="help-brodcast">
+                        <h4>
                             {{ $help->category }}
-                        </summary>
+                        </h4>
                         <div class="help-dropdown">
                             <p>{{ $help->content }}</p>
-                            {{-- <video src=""></video> --}}
-                            {{-- <img src="" alt=""> --}}
+                            @if ($help->video && $help->img)
+                            <video @if($help) src="{{ asset($help->video) }}" @endif controls loop autoplay></video>
+                            <img @if($help) src="{{ asset($help->img) }}" @endif alt="">
+                            @else
+                                <p style="color: red;">No file found</p>
+                            @endif
                         </div>
-                    </details>
+                    </div>
                     @endforeach
                 </div>
 
