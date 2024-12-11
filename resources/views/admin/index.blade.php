@@ -29,25 +29,25 @@
                     <span>Total Users</span>
                 </div>
             </div>
-            <div class="val-box">
-                <img src="icons/cart.svg" alt="" class="icons">
-                <div>
-                    <h3>234,567</h3>
-                    <span>Total Orders</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <img src="icons/products.svg" alt="" class="icons">
-                <div>
-                    <h3>89,3267</h3>
-                    <span>Product Sale</span>
-                </div>
-            </div>
-            <div class="val-box">
+            <div class="val-box" onclick="window.location.href='users'" style="cursor: pointer;">
                 <img src="icons/dollar-sign.svg" alt="" class="icons">
                 <div>
                     <h3>$3,326</h3>
-                    <span>This Month</span>
+                    <span>Total Wallet</span>
+                </div>
+            </div>
+            <div class="val-box" onclick="window.location.href='transactions'" style="cursor: pointer;">
+                <img src="icons/cart.svg" alt="" class="icons">
+                <div>
+                    <h3>234,567</h3>
+                    <span>Total Transactions</span>
+                </div>
+            </div>
+            <div class="val-box"onclick="window.location.href='users'" style="cursor: pointer;">
+                <img src="icons/dollar-sign.svg" alt="" class="icons">
+                <div>
+                    <h3>89,3267</h3>
+                    <span>Total Payments</span>
                 </div>
             </div>
         </div>

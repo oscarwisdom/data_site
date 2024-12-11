@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Settings;
 use App\Models\Payments;
+use App\Models\Transactions;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 
 class HomeController extends Controller
 {
@@ -100,9 +105,10 @@ class HomeController extends Controller
 
     public function view_transaction_table()
     {
-        // $trac = Payments::all();
-        return view('front.view_transaction_table'
-    /*['trac' => $trac]*/);
+         $transactions = Transactions::where('user_id',Auth::user()->user_id)->get();
+        return view('front.view_transaction_table',[
+            'transactions' => $transactions
+        ]);
     }
     public function services()
     {
@@ -111,7 +117,15 @@ class HomeController extends Controller
 
     public function transactions()
     {
-        return view('front.transactions');
+        $transactions = Transactions::where('id', Auth::user()->email)->get();
+        // $labels = [];
+        $data = [];
+
+        foreach ($transactions as $value) {
+            $data[] = $value->amount;
+            // $labels[] = $value->created_at;
+        }
+        return view('front.transactions')->with('labels', $data);
     }
 
     public function help()
@@ -125,6 +139,68 @@ class HomeController extends Controller
     public function settings()
     {
         return view('front.settings');
+    }
+
+    public function update_details(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Every Field Is Required');
+        }
+
+        $user = User::find(Auth::user()->id);
+        if ($user->email == $request->email) {
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+        } 
+        else {
+            $validator = Validator::make($request->all(), [
+                'email' => 'unique:users',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->with('error', 'Email Already Used');
+            }
+
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+        }
+
+        return redirect()->back()->with('message', 'User Details Updated Successfully');
+    }
+
+    public function update_password(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Error With Updating User Password');
+        }
+
+        $current_password = Hash::check($request->current_password, Auth::user()->password);
+        if ($current_password) {
+            User::find(Auth::user()->id)->update([
+                'password' => Hash::make($request->password)
+            ]);
+
+            return redirect()->back()->with('message', 'Password Updated Successfully');
+        }
+        else {
+            return redirect()->back()->with('message', 'Current Password Incorrect');
+        }
     }
 
 

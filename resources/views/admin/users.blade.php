@@ -19,7 +19,13 @@
             </div>
         </div>
 
-        <h3 class="i-name">Dashboard</h3>
+        <h3 class="i-name">Users</h3>
+
+        @if (session('message'))
+            <script>
+                alert('{{ session('message') }}');
+            </script>
+        @endif
 
         <div class="board">
             <table width="100%">
@@ -46,6 +52,14 @@
                         </td>
                         <td class="role">
                             <p>{{ $user->phone }}</p>
+                        </td>
+                        <td onclick="return confirm('Are you sure to delete this user?')">
+                            <form action="{{ url('admin/user-delete/'.$user->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" style="cursor: pointer" id="delete-btn">Delete</button>
+                            </form>
                         </td>
                     </tr>
 

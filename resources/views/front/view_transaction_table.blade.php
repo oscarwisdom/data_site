@@ -34,31 +34,40 @@
             <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label> --}}
         </div>
     </div>
-<div class="holder" style="position: absolute">
-<details id="trac-content">
-    <summary id="trac">view transaction history <i class="fas fa-clock-rotate-left fa-2x"></i></summary>
-    <table class="trac-table">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Email</th>
-          <th>PhoneNumber</th>
-          <th>User_id</th>
-          <th>RecieverNumber</th>
-          <th></th>
-        </tr>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </thead>
-    </table>
-  </details>
-</div>
+
+    <div class="container-body">
+      <div class="home">
+          <i class="fas fa-exchange" aria-hidden="true"></i>
+          <p> Transactions</p>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <th>Request ID</th>
+            <th>User ID</th>
+            <th>Product Name</th>
+            <th>Phone</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Created At</th>
+          </thead>
+
+          <tbody>
+            @foreach ($transactions as $transaction)
+              <tr>
+                <td>{{ $transaction->request_id }}</td>
+                <td>{{ $transaction->user_id }}</td>
+                <td>{{ $transaction->product_name }}</td>
+                <td>{{ $transaction->phone }}</td>
+                <td>{{ $transaction->amount }}</td>
+                <td>{{ $transaction->type }}</td>
+                <td>{{ $transaction->status == 1 ? "Deliverd" : "Not Delivered" }} </td>
+                <td>{{ $transaction->created_at }}</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
 @endsection

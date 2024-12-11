@@ -50,22 +50,28 @@
         </div>
     </form>
 
+    @if (session('error'))
+            <script>
+                alert('{{ session('error') }}')
+            </script>
+        @endif
+
     <form action="{{ url('admin/password') }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('PUT') 
         
         <div class="form">
             <h3 class="i-name">Change Password</h3>
             <div class="input-container ic1" style="margin-bottom: 50px">
-            <input id="current_password" name="current_password" class="input" type="text" placeholder=" " />
+            <input id="current_password" name="current_password" class="input" type="password" placeholder=" " />
             <label for="current_password" >Current Password</label>
             </div>
             <div class="input-container ic2" style="margin-bottom: 50px">
-            <input id="new_password" name="new_password" value="" class="input" type="text" placeholder=" " />
-            <label for="new_password" >New Password</label>
+            <input id="password" name="password" class="input" type="password" placeholder=" " />
+            <label for="password" >New Password</label>
             </div>
             <div class="input-container ic2" style="margin-bottom: 50px">
-            <input id="password_confirmation" name="password_confirmation" value="" class="input" type="text" placeholder=" " />
+            <input id="password_confirmation" name="password_confirmation" value="" class="input" type="password" placeholder=" " />
             <label for="password_confirmation" >Password Confirmation</label>
             </div>
             <div class="input-container ic2" style="margin-bottom: 30px">

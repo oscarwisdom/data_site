@@ -1,5 +1,7 @@
 import Chart from 'chart.js/auto';
 
+// const dataSet = JSON.parse('{!! json_encode($data) !!}');
+
 const labels = [
     'January',
     'February',
@@ -7,6 +9,12 @@ const labels = [
     'April',
     'May',
     'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
 ];
 
 const data = {
@@ -15,7 +23,7 @@ const data = {
         label: 'My First dataset',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: /*dataSet*/ [0, 10, 5, 2, 20, 30, 45],
     }]
 };
 

@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Help;
 use App\Models\Settings;
+use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
+// use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -41,7 +45,7 @@ class AdminController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'email' => 'required|string|max:255|unique:users',
             'phone' => 'required|string|max:255'
         ]);
 
@@ -51,19 +55,54 @@ class AdminController extends Controller
 
         $admin = User::where('role','1')->first();
 
-        $admin->name = $request->name;
-        $admin->email = $request->email;
-        $admin->phone = $request->phone;
-        $admin->update();
+        if ($admin->email == $request->email) {
+            $admin->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+        } 
+        else {
+            $validator = Validator::make($request->all(), [
+                'email' => 'unique:users',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->with('error', 'Email Already Used');
+            }
+
+            $admin->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+        }
 
         return redirect('admin/profile')->with('message', 'Personal Information Updated Successfully');
     }
 
     public function update_password(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
 
-        // continue from last class
+        ]);
 
-        
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Error With Updating Admin Password');
+        }
+
+        $current_password = Hash::check($request->current_password, Auth::user()->password);
+        if ($current_password) {
+            User::find(Auth::user()->id)->update([
+                'password' => Hash::make($request->password)
+            ]);
+
+            return redirect()->back()->with('message', 'Password Updated Successfully');
+        }
+        else {
+            return redirect()->back()->with('message', 'Current Password Incorrect');
+        }
     }
 
     public function add_help(Request $request) {
@@ -223,4 +262,68 @@ class AdminController extends Controller
             return redirect('admin/settings')->with('message', 'Settings Added!');
         }
     }
+
+
+    public function get_transactions() {
+        $transactions = Transactions::all();
+        $sum = $transactions->sum('amount');
+        $average = $transactions->count() > 0 ? $sum / $transactions->count() : 0;
+        $percentage = $transactions->count() > 0 ? ($sum / ($transactions->count() * $average)) * 100 : 0;
+
+
+
+        return view('admin.transactions',[
+            'transactions' => $transactions,
+            'sum' => $sum,
+            'average' => $average,
+            'percentage' => $percentage
+        ]);
+    }
+
+    public function user_delete(Request $request) {
+        $user_id = $request->user_id;
+        
+        $user = User::find($user_id);
+        $user->delete();
+
+        return redirect()->back()->with('message','User Deleted Successfully');
+    }
+
+    public function api_manegement()
+    {
+        $allRoutes = $this->getAllRoutes();
+        return view('admin.api', compact('allRoutes'));
+    }
+
+    public function getAllRoutes() {
+    $routes = [];
+
+    // Get all defined routes
+    $routeCollection = Route::getRoutes();
+    foreach ($routeCollection as $route) {
+        $routeInfo = [
+            'method' => implode('|', $route->methods()),
+            'uri' => $route->uri(),
+            'name' => $route->getName(),
+            'action' => $route->getActionName(),
+        ];
+        $routes[] = $routeInfo;
+    }
+
+    return $routes;
+    // $allRoutes = getAllRoutes();
+}
+
+// In your CMS controller or any other controller
+// public function displayRoutes()
+// {
+
+//     // You can now use the $allRoutes array to display or manipulate the routes in your CMS.
+//     // For example, you can loop through the routes and display them in a table or list.
+
+//     return view('cms.routes',);
+// }
+
+// Usage example:
+// You can now use the $allRoutes array in your CMS to display or manipulate the routes.
 }

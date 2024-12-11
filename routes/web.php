@@ -26,13 +26,17 @@ Auth::routes();
 
 // User Routess 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/payment', [App\Http\Controllers\HomeController::class, 'payment']);
-Route::get('/make_payment', [App\Http\Controllers\HomeController::class, 'make_payment']);
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/view_transaction_table', [App\Http\Controllers\HomeController::class, 'view_transaction_table']);
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help']);
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']);
+Route::put('/update_details', [App\Http\Controllers\HomeController::class, 'update_details']);
+Route::put('/update_password', [App\Http\Controllers\HomeController::class, 'update_password']);
+
+// Payment Routes
+Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment']);
+Route::get('/make_payment', [App\Http\Controllers\PaymentController::class, 'make_payment']);
 
 // VTU Routes
 Route::post('/buy-airtime', [VTUController::class, 'buy_airtime']);
@@ -46,7 +50,7 @@ Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_
 Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
 Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
 Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
-
+ 
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
@@ -59,4 +63,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::post('/settings', [AdminController::class, 'update_settings']);
     Route::post('/add_help', [AdminController::class, 'add_help']);
     Route::delete('/delete_help', [AdminController::class, 'delete_help']);
+    Route::get('/transactions', [AdminController::class, 'get_transactions']);
+    Route::delete('/user-delete/{user_id}', [AdminController::class, 'user_delete']);
+    Route::get('/api_manegement', [AdminController::class, 'api_manegement']);
 });

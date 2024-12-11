@@ -54,7 +54,7 @@
 
               @elseif($item == "airtime")
 
-              @if (session('message'))
+              @if (session('message')) 
                 <script>
                     alert('{{ session('message') }}');
                 </script>

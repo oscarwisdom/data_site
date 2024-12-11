@@ -18,7 +18,7 @@
         <li>
             <a href={{ url('services') }}>
                 <span class="icon">
-                <i class="fa fa-user v1"></i>
+                <i class="fa fa-border-all v1"></i>
                 </span>
                 <span class="title">Services</span>
             </a>
@@ -54,9 +54,9 @@
         <li>
             <a href={{ url('settings') }}>
                 <span class="icon">
-                <i class="fa fa-gear v1"></i>
+                <i class="fa fa-user v1"></i>
                 </span>
-                <span class="title">Settings</span>
+                <span class="title">Profile</span>
             </a>
         </li>
 

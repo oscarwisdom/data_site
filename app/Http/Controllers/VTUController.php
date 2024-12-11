@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,7 @@ class VTUController extends Controller
         if ($balance >= $amount) { // if th balance is greater than or equal to amount
 
             // then the amount being requested from the user and substract the balance from the user table
-            Auth::user()->decreament('balance', $amount);
+            Auth::user()->decrement('balance', $amount);
             
 
             // this are the required field to fill which is in our form 
@@ -59,15 +60,32 @@ class VTUController extends Controller
             // After executing the request
             $response = curl_exec($ch);
             $result = json_decode($response);
+            print_r($result->content->transactions->product_name);
 
 
-            if($result->content->transactions->status === "delivered"){
+             if($result->content->transactions->status === "delivered"){
+                $request_id = $result->requestId;
+                $product_name = $result->content->transactions->product_name;
+                $phone = $result->content->transactions->unique_element;
+                $amount = $result->amount;
+                $type = $result->content->transactions->type;
+                $status = $result->content->transactions->status === "delivered" ? 1 : 0;
 
-                return redirect('/home')->with('message', 'Airtime Purchased Successfully'); 
+                $transactions = new Transactions;
+                $transactions->user_id = Auth::user()->user_id;
+                $transactions->request_id = $request_id;
+                $transactions->product_name = $product_name;
+                $transactions->amount = $amount;
+                $transactions->phone = $phone;
+                $transactions->type = $type;
+                $transactions->status = $status;
+                $transactions->save();
+
+                return redirect()->back()->with('message', 'Airtime Purchased Successfully');
              }
              else{
                 return redirect()->back()->with('message', 'Request No Processed'); 
-             }
+             }  
 
         }
         else {

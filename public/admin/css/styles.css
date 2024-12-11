@@ -437,4 +437,8 @@ tbody tr td {
   .submit:active {
     background-color: #06b;
   }
+
+  #delete-btn{
+    padding: 20px 30px;
+  }
   
