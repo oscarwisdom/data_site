@@ -118,14 +118,18 @@ class HomeController extends Controller
     public function transactions()
     {
         $transactions = Transactions::where('id', Auth::user()->email)->get();
-        // $labels = [];
-        $data = [];
 
-        foreach ($transactions as $value) {
-            $data[] = $value->amount;
+        // $tr  = $transactions->email;
+        // $labels = [];
+        // $data = [];
+
+        $value = $transactions->where('amount');
+           $data[] = $value;
             // $labels[] = $value->created_at;
-        }
-        return view('front.transactions')->with('labels', $data);
+            // $datasetData = json_encode($tr);
+            
+        // }
+            return view('front.transactions');
     }
 
     public function help()

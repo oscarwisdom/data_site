@@ -985,3 +985,69 @@ body{
   tr:hover {
     background-color: #f5f5f5;
   }
+  /* Add this CSS to your styles.css file or within a <style> tag in the head section of your HTML file */
+
+.help-box {
+  width: 80%;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.help-box .home {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.help-box .home i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.help-box .home p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+#help-dropdown-wrapper {
+  margin-bottom: 20px;
+}
+
+#help-brodcast {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#help-brodcast h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.help-dropdown {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.help-dropdown p {
+  margin-bottom: 10px;
+}
+
+.help-dropdown video,
+.help-dropdown img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.help-dropdown p.no-file {
+  color: red;
+}

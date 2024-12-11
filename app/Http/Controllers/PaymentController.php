@@ -65,6 +65,7 @@ class PaymentController extends Controller
                 $payments->phone = $phone;
                 $payments->user_id = $user_id;
                 $payments->amount_paid = $amount_paid;
+
                 $payments->save();
 
                 Auth::user()->increment('balance', $amount_paid);

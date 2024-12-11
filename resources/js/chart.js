@@ -1,6 +1,8 @@
 import Chart from 'chart.js/auto';
 
 // const dataSet = JSON.parse('{!! json_encode($data) !!}');
+// const labelsec = JSON.parse('@json($labels)');
+// const datasetData = JSON.parse('{!! json_encode($datasetData) !!}');
 
 const labels = [
     'January',
