@@ -56,11 +56,17 @@
                 <div id="chart">
                   <a href="{{ url('/view_transaction_table') }}">Transaction History</a>
                 </div>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
+          
+          {{-- @foreach ($transactions as $item)
+          @if (!$transactions)
+          <p>error</p>
+          @endif
+          <p>{{ $item->sum('amount') }}</p>
+          @endforeach --}}
 
-        {{-- <p>{{ $datasetData }}</p> --}}
     </div>
 </div>
 
